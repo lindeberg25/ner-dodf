@@ -1,12 +1,8 @@
 name: ner
 channels:
 - defaults
-  #- bioconda
-  #- conda-forge
-  #- conda-canary
 dependencies:
-- pandas
 - python>=3.6
 - pip
 - spacy
-- re
+- flask
