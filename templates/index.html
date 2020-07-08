@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Named Entity Extractor</title>
+    <title>NER - DODF</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
@@ -13,7 +13,7 @@
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-  <a class="navbar-brand" href="/">Named Entity Extractor</a>
+  <a class="navbar-brand" href="/">NER - DODF</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,19 +42,18 @@
         
         <form method="POST" action="/process">
             <div class="form-group">
-                    <label>Your Text</label>
+                    <label>Trecho do DODF</label>
             <textarea type="text" rows="5" cols="5" class="form-control"  name="rawtext" required="true">   </textarea>
             <br/>
             <select class="form-control" name="taskoption">
-			  <option selected>Select Task</option>
-			  <option value="organization">Organization</option>
-			  <option value="person">Person</option>
-			  <option value="geopolitical">Geopolitical</option>
-        <option value="money">Money</option>
+			  <option selected>Selecione tipo de entidade</option>
+        <option value="pessoa">Pessoa</option>
+        <option value="matricula">Matrícula</option>
+        <option value="acao">Ação</option>
 			</select>
 			<br/>
-            <button type="reset" class="btn btn-primary"><i class="fa fa-eraser"></i> Clear</button>
-            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Submit</button>
+            <button type="reset" class="btn btn-primary"><i class="fa fa-eraser"></i> Limpar</button>
+            <button type="submit" class="btn btn-info"><i class="fa fa-database"></i> Enviar</button>
          
         </div>
         </form>
@@ -62,8 +61,8 @@
 
     <div class="container">
     	<div class="alert alert-success" role="alert">
-        <p class="alert-heading">Result</p>
-        <p>Number of Records:{{num_of_results}}</p>
+        <p class="alert-heading">Resultados</p>
+        <p>Número de registros:{{num_of_results}}</p>
         <ul>{% for i in results %}
         	<li>{{i}}</li>
         	{%endfor %}

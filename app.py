@@ -3,8 +3,8 @@ import re
 import pandas as pd
 import spacy
 from spacy import displacy
-import en_core_web_sm
-nlp = spacy.load('en_core_web_md')
+#nlp = spacy.load('pt_core_news_sm')
+nlp = spacy.load("custom_ner_model")
 
 app = Flask(__name__)
 
@@ -22,21 +22,17 @@ def process():
 		for ent in doc.ents:
 			d.append((ent.label_, ent.text))
 			df = pd.DataFrame(d, columns=('named entity', 'output'))
-			ORG_named_entity = df.loc[df['named entity'] == 'ORG']['output']
-			PERSON_named_entity = df.loc[df['named entity'] == 'PERSON']['output']
-			GPE_named_entity = df.loc[df['named entity'] == 'GPE']['output']
-			MONEY_named_entity = df.loc[df['named entity'] == 'MONEY']['output']
-		if choice == 'organization':
-			results = ORG_named_entity
+			pessoa_named_entity = df.loc[df['named entity'] == 'pessoa']['output']
+			matricula_named_entity = df.loc[df['named entity'] == 'matrícula']['output']
+			acao_named_entity = df.loc[df['named entity'] == 'ação']['output']
+		if choice == 'matricula':
+			results = matricula_named_entity
 			num_of_results = len(results)
-		elif choice == 'person':
-			results = PERSON_named_entity
+		elif choice == 'pessoa':
+			results = pessoa_named_entity
 			num_of_results = len(results)
-		elif choice == 'geopolitical':
-			results = GPE_named_entity
-			num_of_results = len(results)
-		elif choice == 'money':
-			results = MONEY_named_entity
+		elif choice == 'acao':
+			results = acao_named_entity
 			num_of_results = len(results)
 		
 	

@@ -1,0 +1,10 @@
+name: ner
+channels:
+- flask
+- defaults
+dependencies:
+- pandas
+- python>=3.6
+- pip
+- spacy
+- re
