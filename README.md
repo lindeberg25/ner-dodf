@@ -10,7 +10,7 @@ How to run:
 2 - python app.py
 3 - Access the URL
 
-To make testing easier, there is a file with excerpts from DODF in test.txt. However, feel free to test with others
+To make testing easier, there is a file with excerpts from DODF in test.txt. However, feel free to test with others.
 
 
 
