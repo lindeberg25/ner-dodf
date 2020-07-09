@@ -1,6 +1,6 @@
 # NER-DODF
 
-A simple Flask API for extracting named entities using the spaCy model
+A simple Flask web application for extracting named entities using the spaCy model
 
 The data set used is from DODF. The model was trained only with 23 DODF sentences to detect three types of entities:
 pessoa, matrícula and ação (Spacy_custom_NER_model.ipynb)
