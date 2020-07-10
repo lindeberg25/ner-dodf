@@ -15,5 +15,7 @@ How to run:
 
 To make testing easier, there are excerpts from DODF in test.txt. However, feel free to test with others.
 
+Credit: this code was customized from https://github.com/susanli2016/Named-Entity-Extractor
+
 
 
